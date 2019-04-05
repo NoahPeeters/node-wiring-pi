@@ -17,21 +17,23 @@
 #include "sn3218.h"
 #include "sr595.h"
 
-IMPLEMENT_EXPORT_INIT(extensions) {
-  INIT(drcSerial);
-  INIT(max5322);
-  INIT(max31855);
-  INIT(mcp23s08);
-  INIT(mcp23s17);
-  INIT(mcp3002);
-  INIT(mcp3004);
-  INIT(mcp3422);
-  INIT(mcp4802);
-  INIT(mcp23008);
-  INIT(mcp23016);
-  INIT(mcp23017);
-  INIT(pcf8574);
-  INIT(pcf8591);
-  INIT(sn3218);
-  INIT(sr595);
+namespace nodewpi {
+    NAN_MODULE_INIT(init_extensions) {
+            nodewpi::init_drcSerial(target);
+            nodewpi::init_max5322(target);
+            nodewpi::init_max31855(target);
+            nodewpi::init_mcp23s08(target);
+            nodewpi::init_mcp23s17(target);
+            nodewpi::init_mcp3002(target);
+            nodewpi::init_mcp3004(target);
+            nodewpi::init_mcp3422(target);
+            nodewpi::init_mcp4802(target);
+            nodewpi::init_mcp23008(target);
+            nodewpi::init_mcp23016(target);
+            nodewpi::init_mcp23017(target);
+            nodewpi::init_pcf8574(target);
+            nodewpi::init_pcf8591(target);
+            nodewpi::init_sn3218(target);
+            nodewpi::init_sr595(target);
+    }
 }

@@ -3,7 +3,7 @@
 
 #include "addon.h"
 
-namespace nodewpi {  
+namespace nodewpi {
   NAN_METHOD(wiringPiISR);
 // see comments in .cc   NAN_METHOD(wiringPiISRCancel);
 

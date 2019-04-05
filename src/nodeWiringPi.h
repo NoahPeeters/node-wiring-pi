@@ -8,9 +8,9 @@
 #include "wiringPiISR.h"
 #include "wiringSerial.h"
 #include "wiringShift.h"
-  
-//#include "extensions/extensions.h"
-//#include "devlib/devlib.h"
+
+#include "extensions/extensions.h"
+#include "devlib/devlib.h"
 
 namespace nodewpi {
     NAN_MODULE_INIT(init_nodeWiringPi);

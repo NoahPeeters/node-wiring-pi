@@ -2,7 +2,7 @@
 #define _WPI_WIRING_PI_I2C_H_
 
 #include "addon.h"
-namespace nodewpi {  
+namespace nodewpi {
   NAN_METHOD(wiringPiI2CRead);
   NAN_METHOD(wiringPiI2CReadReg8);
   NAN_METHOD(wiringPiI2CReadReg16);

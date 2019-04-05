@@ -240,7 +240,7 @@ namespace nodewpi {
     #endif
 
 
-    // check the edge type is valid.  
+    // check the edge type is valid.
     const std::vector<int> validInputs = { INT_EDGE_FALLING, INT_EDGE_RISING, INT_EDGE_BOTH, INT_EDGE_SETUP};
 
     if(! find_int(edgeType, validInputs)) {
@@ -254,14 +254,14 @@ namespace nodewpi {
     uv_async_init(uv_default_loop(), &async_handlers[pin], &dispatchInterrupt);
     uv_ref((uv_handle_t*)&async_handlers[pin]);
 
-    // everything must be initialised when the isr is installed otherwise if 
+    // everything must be initialised when the isr is installed otherwise if
     // a pulse arrives before structures are setup there will be a segv.
     ::wiringPiISR(pin, edgeType, interrupt_handlers[pin]);
 
   }
 
 /* The standard wiringPi lib doesnt allow cancelling an ISR.
-  Assuming, based on other example code that the ISR cancels when 
+  Assuming, based on other example code that the ISR cancels when
   the process exits. Some forks of wiringPi do support cancelling an ISR,
   but this lib uses the standard, unpatched wiringPi.
   NAN_METHOD(wiringPiISRCancel) {

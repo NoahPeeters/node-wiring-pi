@@ -11,7 +11,7 @@
     NAN_METHOD(serialPrintf);
     NAN_METHOD(serialDataAvail);
     NAN_METHOD(serialGetchar);
-    
+
     NAN_MODULE_INIT(init_wiringSerial);
   }
 #endif

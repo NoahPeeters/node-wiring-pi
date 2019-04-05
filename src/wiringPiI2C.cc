@@ -8,17 +8,17 @@ namespace nodewpi {
   // Simple device read. Some devices present data when you read them without having to do any register transactions.
 
   NAN_METHOD(wiringPiI2CRead) {
-    
+
     SET_ARGUMENT_NAME(0, fd);
-    
+
     CHECK_ARGUMENTS_LENGTH_EQUAL(1);
-    
+
     CHECK_ARGUMENT_TYPE_INT32(0);
-    
+
     int fd = GET_ARGUMENT_AS_INT32(0);
-    
+
     int res = ::wiringPiI2CRead(fd);
-    
+
     info.GetReturnValue().Set(res);
   }
 
@@ -26,20 +26,20 @@ namespace nodewpi {
   // read an 8-bits value from the device register indicated.
 
   NAN_METHOD(wiringPiI2CReadReg8) {
-    
+
     SET_ARGUMENT_NAME(0, fd);
     SET_ARGUMENT_NAME(1, reg);
-    
+
     CHECK_ARGUMENTS_LENGTH_EQUAL(2);
-    
+
     CHECK_ARGUMENT_TYPE_INT32(0);
     CHECK_ARGUMENT_TYPE_INT32(1);
-    
+
     int fd = GET_ARGUMENT_AS_INT32(0);
     int reg = GET_ARGUMENT_AS_INT32(1);
-    
+
     int res = ::wiringPiI2CReadReg8(fd, reg);
-    
+
     info.GetReturnValue().Set(res);
   }
 
@@ -71,18 +71,18 @@ namespace nodewpi {
 
     SET_ARGUMENT_NAME(0, fd);
     SET_ARGUMENT_NAME(1, data);
-    
+
     CHECK_ARGUMENTS_LENGTH_EQUAL(2);
-    
+
     CHECK_ARGUMENT_TYPE_INT32(0);
     CHECK_ARGUMENT_TYPE_INT32(1);
-    
+
     int fd = GET_ARGUMENT_AS_INT32(0);
     int data = GET_ARGUMENT_AS_INT32(1);
     data = data & 0xFF;
-    
+
     int res = ::wiringPiI2CWrite(fd, data);
-    
+
     info.GetReturnValue().Set(res);
   }
 
@@ -138,21 +138,21 @@ namespace nodewpi {
 
   NAN_METHOD(wiringPiI2CSetupInterface) {
 
-    
+
     SET_ARGUMENT_NAME(0, device);
     SET_ARGUMENT_NAME(1, devId);
-    
+
     CHECK_ARGUMENTS_LENGTH_EQUAL(2);
-    
+
     CHECK_ARGUMENT_TYPE_STRING(0);
     CHECK_ARGUMENT_TYPE_INT32(1);
-    
+
     Nan::Utf8String device(GET_ARGUMENT_AS_STRING(0));
-    
+
     int devId = GET_ARGUMENT_AS_INT32(1);
-    
+
     int res = ::wiringPiI2CSetupInterface(*device, devId);
-    
+
     info.GetReturnValue().Set(res);
   }
 
@@ -160,17 +160,17 @@ namespace nodewpi {
 
   NAN_METHOD(wiringPiI2CSetup) {
 
-    
+
     SET_ARGUMENT_NAME(0, devId);
-    
+
     CHECK_ARGUMENTS_LENGTH_EQUAL(1);
-    
+
     CHECK_ARGUMENT_TYPE_INT32(0);
-    
+
     int devId = GET_ARGUMENT_AS_INT32(0);
-    
+
     int res = ::wiringPiI2CSetup(devId);
-    
+
     info.GetReturnValue().Set(res);
   }
 

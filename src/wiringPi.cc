@@ -250,8 +250,8 @@ NAN_METHOD(digitalWrite) {
   } else {
     THROW_INVALID_ARGUMENT_EXCEPTION(1, state)
   }
-  
-  
+
+
 
 }
 
@@ -401,7 +401,7 @@ NAN_METHOD(piBoardId) {
     obj->Set(STRING("mem"), INT32(mem));
     obj->Set(STRING("marker"), INT32(marker));
     obj->Set(STRING("overvolted"), INT32(overvolted));
-  
+
   info.GetReturnValue().Set(obj);
 }
 
@@ -686,7 +686,6 @@ NAN_MODULE_INIT(init_wiringPi) {
   NODE_DEFINE_CONSTANT(target, PI_MODEL_CM);
   NODE_DEFINE_CONSTANT(target, PI_MODEL_AP);
   NODE_DEFINE_CONSTANT(target, PI_MODEL_2);
-  NODE_DEFINE_CONSTANT(target, PI_MODEL_3);
   NODE_DEFINE_CONSTANT(target, PI_MODEL_07);
   NODE_DEFINE_CONSTANT(target, PI_MODEL_ZERO);
 

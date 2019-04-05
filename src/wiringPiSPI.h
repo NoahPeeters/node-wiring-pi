@@ -8,7 +8,7 @@ namespace nodewpi {
   NAN_METHOD(wiringPiSPISetup);
   NAN_METHOD(wiringPiSPISetupMode);
   NAN_METHOD(wiringPiSPIClose);
-  
+
   NAN_MODULE_INIT(init_wiringPiSPI);
 }
 #endif

@@ -1,24 +1,22 @@
 #include "gertboard.h"
 #include <gertboard.h>
 
-NAN_METHOD(gertboardAnalogSetup);
+namespace nodewpi {
+    NAN_METHOD(gertboardAnalogSetup) {
+            SET_ARGUMENT_NAME(0, pinBase);
 
-IMPLEMENT(gertboardAnalogSetup) {
-  SCOPE_OPEN();
-  
-  SET_ARGUMENT_NAME(0, pinBase);
-  
-  CHECK_ARGUMENTS_LENGTH_EQUAL(1);
-  
-  CHECK_ARGUMENT_TYPE_INT32(0);
-  
-  int pinBase = GET_ARGUMENT_AS_INT32(0);
-  
-  int res = ::gertboardAnalogSetup(pinBase);
-  
-  SCOPE_CLOSE(INT32(res));
-}
+            CHECK_ARGUMENTS_LENGTH_EQUAL(1);
 
-IMPLEMENT_EXPORT_INIT(gertboard) {
-  EXPORT_FUNCTION(gertboardAnalogSetup);
+            CHECK_ARGUMENT_TYPE_INT32(0);
+
+            int pinBase = GET_ARGUMENT_AS_INT32(0);
+
+            int res =::gertboardAnalogSetup(pinBase);
+
+            info.GetReturnValue().Set(res);
+    }
+
+    NAN_MODULE_INIT(init_gertboard) {
+            NAN_EXPORT(target, gertboardAnalogSetup);
+    }
 }

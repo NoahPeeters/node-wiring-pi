@@ -9,13 +9,15 @@
 #include "piGlow.h"
 #include "piNes.h"
 
-IMPLEMENT_EXPORT_INIT(devlib) {
-  INIT(ds1302);
-  INIT(gertboard);
-  INIT(lcd);
-  INIT(lcd128x64);
-  INIT(maxdetect);
-  INIT(piFace);
-  INIT(piGlow);
-  INIT(piNes);
+namespace nodewpi {
+    NAN_MODULE_INIT(init_devlib) {
+            init_ds1302(target);
+            init_gertboard(target);
+            init_lcd(target);
+            init_lcd128x64(target);
+            init_maxdetect(target);
+            init_piFace(target);
+            init_piGlow(target);
+            init_piNes(target);
+    }
 }

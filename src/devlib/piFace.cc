@@ -1,24 +1,22 @@
 #include "piFace.h"
 #include <piFace.h>
 
-NAN_METHOD(piFaceSetup);
+namespace nodewpi {
+    NAN_METHOD(piFaceSetup) {
+            SET_ARGUMENT_NAME(0, pinBase);
 
-IMPLEMENT(piFaceSetup) {
-  SCOPE_OPEN();
-  
-  SET_ARGUMENT_NAME(0, pinBase);
-  
-  CHECK_ARGUMENTS_LENGTH_EQUAL(1);
-  
-  CHECK_ARGUMENT_TYPE_INT32(0);
-  
-  int pinBase = GET_ARGUMENT_AS_INT32(0);
-  
-  int res = ::piFaceSetup(pinBase);
-  
-  SCOPE_CLOSE(INT32(res));
-}
+            CHECK_ARGUMENTS_LENGTH_EQUAL(1);
 
-IMPLEMENT_EXPORT_INIT(piFace) {
-  EXPORT_FUNCTION(piFaceSetup);
+            CHECK_ARGUMENT_TYPE_INT32(0);
+
+            int pinBase = GET_ARGUMENT_AS_INT32(0);
+
+            int res =::piFaceSetup(pinBase);
+
+            info.GetReturnValue().Set(res);
+    }
+
+    NAN_MODULE_INIT(init_piFace) {
+            NAN_EXPORT(target, piFaceSetup);
+    }
 }
