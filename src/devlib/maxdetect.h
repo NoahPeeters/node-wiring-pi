@@ -4,10 +4,10 @@
 #include "../addon.h"
 
 namespace nodewpi {
-    NAN_METHOD(maxDetectRead);
-    NAN_METHOD(readRHT03);
+  NAN_METHOD(maxDetectRead);
+  NAN_METHOD(readRHT03);
 
-    NAN_MODULE_INIT(init_maxdetect);
+  NAN_MODULE_INIT(init_maxdetect);
 }
 
 #endif

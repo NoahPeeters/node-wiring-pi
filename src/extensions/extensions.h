@@ -4,7 +4,7 @@
 #include "../addon.h"
 
 namespace nodewpi {
-    NAN_MODULE_INIT(init_extensions);
+  NAN_MODULE_INIT(init_extensions);
 }
 
 #endif

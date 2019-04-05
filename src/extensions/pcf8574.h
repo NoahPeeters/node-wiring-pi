@@ -4,9 +4,9 @@
 #include "../addon.h"
 
 namespace nodewpi {
-    NAN_METHOD(pcf8574Setup);
+  NAN_METHOD(pcf8574Setup);
 
-    NAN_MODULE_INIT(init_pcf8574);
+  NAN_MODULE_INIT(init_pcf8574);
 }
 
 #endif

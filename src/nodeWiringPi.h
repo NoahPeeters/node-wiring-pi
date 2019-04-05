@@ -13,5 +13,5 @@
 #include "devlib/devlib.h"
 
 namespace nodewpi {
-    NAN_MODULE_INIT(init_nodeWiringPi);
+  NAN_MODULE_INIT(init_nodeWiringPi);
 }

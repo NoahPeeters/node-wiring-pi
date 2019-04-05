@@ -4,9 +4,9 @@
 #include "../addon.h"
 
 namespace nodewpi {
-    NAN_METHOD(sr595Setup);
+  NAN_METHOD(sr595Setup);
 
-    NAN_MODULE_INIT(init_sr595);
+  NAN_MODULE_INIT(init_sr595);
 }
 
 #endif

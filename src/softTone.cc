@@ -15,17 +15,17 @@ namespace nodewpi {
 
   NAN_METHOD(softToneCreate) {
 
-    SET_ARGUMENT_NAME(0, pin);
+      SET_ARGUMENT_NAME(0, pin);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(1);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(1);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(0);
 
-    int pin = GET_ARGUMENT_AS_INT32(0);
+      int pin = GET_ARGUMENT_AS_INT32(0);
 
-    int res = ::softToneCreate(pin);
+      int res = ::softToneCreate(pin);
 
-    info.GetReturnValue().Set(res);
+      info.GetReturnValue().Set(res);
   }
 
   // Func : void softToneWrite(int pin, int freq);
@@ -33,18 +33,18 @@ namespace nodewpi {
 
   NAN_METHOD(softToneWrite) {
 
-    SET_ARGUMENT_NAME(0, pin);
-    SET_ARGUMENT_NAME(1, frequency);
+      SET_ARGUMENT_NAME(0, pin);
+      SET_ARGUMENT_NAME(1, frequency);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(2);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(2);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
-    CHECK_ARGUMENT_TYPE_INT32(1);
+      CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(1);
 
-    int pin = GET_ARGUMENT_AS_INT32(0);
-    int frequency = GET_ARGUMENT_AS_INT32(1);
+      int pin = GET_ARGUMENT_AS_INT32(0);
+      int frequency = GET_ARGUMENT_AS_INT32(1);
 
-    ::softToneWrite(pin, frequency);
+      ::softToneWrite(pin, frequency);
   }
 
   NAN_METHOD(softToneStop) {
@@ -61,9 +61,9 @@ namespace nodewpi {
   }
 
   NAN_MODULE_INIT(init_softTone) {
-    NAN_EXPORT(target, softToneCreate);
-    NAN_EXPORT(target, softToneWrite);
-    NAN_EXPORT(target, softToneStop);
+      NAN_EXPORT(target, softToneCreate);
+      NAN_EXPORT(target, softToneWrite);
+      NAN_EXPORT(target, softToneStop);
   }
 
 } //namespace nodewpi

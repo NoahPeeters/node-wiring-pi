@@ -4,9 +4,9 @@
 #include "../addon.h"
 
 namespace nodewpi {
-    NAN_METHOD(max31855Setup);
+  NAN_METHOD(max31855Setup);
 
-    NAN_MODULE_INIT(init_max31855);
+  NAN_MODULE_INIT(init_max31855);
 }
 
 #endif

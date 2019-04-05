@@ -3,22 +3,21 @@
 
 namespace nodewpi {
 
-    NAN_MODULE_INIT(init_nodeWiringPi)
-    {
-        nodewpi::init_wiringPi(target);
+  NAN_MODULE_INIT(init_nodeWiringPi) {
+      nodewpi::init_wiringPi(target);
 
-        nodewpi::init_softPwm(target);
-        nodewpi::init_softTone(target);
+      nodewpi::init_softPwm(target);
+      nodewpi::init_softTone(target);
 
-        nodewpi::init_wiringPiI2C(target);
-        nodewpi::init_wiringPiSPI(target);
-        nodewpi::init_wiringPiISR(target);
-        nodewpi::init_wiringSerial(target);
-        nodewpi::init_wiringShift(target);
+      nodewpi::init_wiringPiI2C(target);
+      nodewpi::init_wiringPiSPI(target);
+      nodewpi::init_wiringPiISR(target);
+      nodewpi::init_wiringSerial(target);
+      nodewpi::init_wiringShift(target);
 
-        nodewpi::init_extensions(target);
-        nodewpi::init_devlib(target);
-    }
+      nodewpi::init_extensions(target);
+      nodewpi::init_devlib(target);
+  }
 }
 
 NODE_MODULE(nodeWiringPi, nodewpi::init_nodeWiringPi)

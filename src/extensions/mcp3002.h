@@ -4,9 +4,9 @@
 #include "../addon.h"
 
 namespace nodewpi {
-    NAN_METHOD(mcp3002Setup);
+  NAN_METHOD(mcp3002Setup);
 
-    NAN_MODULE_INIT(init_mcp3002);
+  NAN_MODULE_INIT(init_mcp3002);
 }
 
 #endif

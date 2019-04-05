@@ -4,9 +4,9 @@
 #include "../addon.h"
 
 namespace nodewpi {
-    NAN_METHOD(piFaceSetup);
+  NAN_METHOD(piFaceSetup);
 
-    NAN_MODULE_INIT(init_piFace);
+  NAN_MODULE_INIT(init_piFace);
 }
 
 #endif

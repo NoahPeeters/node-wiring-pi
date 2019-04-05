@@ -108,7 +108,6 @@
   #define STRING(v) Nan::New<v8::String>(v).ToLocalChecked()
   #define ARRAY(v) Nan::New<v8::Array>(v)
 
-
   #define SET_ARGUMENT_NAME(id, name) static const char* arg##id = #name
   #define GET_ARGUMENT_NAME(id) arg##id
 

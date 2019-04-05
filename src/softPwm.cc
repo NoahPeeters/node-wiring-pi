@@ -16,67 +16,67 @@
 
 namespace nodewpi {
 
-NAN_METHOD(softPwmCreate) {
+  NAN_METHOD(softPwmCreate) {
 
-  SET_ARGUMENT_NAME(0, pin);
-  SET_ARGUMENT_NAME(1, value);
-  SET_ARGUMENT_NAME(2, range);
+      SET_ARGUMENT_NAME(0, pin);
+      SET_ARGUMENT_NAME(1, value);
+      SET_ARGUMENT_NAME(2, range);
 
-  CHECK_ARGUMENTS_LENGTH_EQUAL(3);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(3);
 
-  CHECK_ARGUMENT_TYPE_INT32(0);
-  CHECK_ARGUMENT_TYPE_INT32(1);
-  CHECK_ARGUMENT_TYPE_INT32(2);
+      CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(1);
+      CHECK_ARGUMENT_TYPE_INT32(2);
 
-  int pin = GET_ARGUMENT_AS_INT32(0);
-  int value = GET_ARGUMENT_AS_INT32(1);
-  int range = GET_ARGUMENT_AS_INT32(2);
+      int pin = GET_ARGUMENT_AS_INT32(0);
+      int value = GET_ARGUMENT_AS_INT32(1);
+      int range = GET_ARGUMENT_AS_INT32(2);
 
-  int res = ::softPwmCreate(pin, value, range);
+      int res = ::softPwmCreate(pin, value, range);
 
-  info.GetReturnValue().Set(res);
-}
+      info.GetReturnValue().Set(res);
+  }
 
 // Func void softPwmWrite(int pin, int value)
 // Description : This updates the PWM value on the given pin.
 // The value is checked to be in-range and pins that haven’t previously been initialised via softPwmCreate will be silently ignored.
 
-NAN_METHOD(softPwmWrite) {
+  NAN_METHOD(softPwmWrite) {
 
-  SET_ARGUMENT_NAME(0, pin);
-  SET_ARGUMENT_NAME(1, value);
+      SET_ARGUMENT_NAME(0, pin);
+      SET_ARGUMENT_NAME(1, value);
 
-  CHECK_ARGUMENTS_LENGTH_EQUAL(2);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(2);
 
-  CHECK_ARGUMENT_TYPE_INT32(0);
-  CHECK_ARGUMENT_TYPE_INT32(1);
+      CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(1);
 
-  int pin = GET_ARGUMENT_AS_INT32(0);
-  int value = GET_ARGUMENT_AS_INT32(1);
+      int pin = GET_ARGUMENT_AS_INT32(0);
+      int value = GET_ARGUMENT_AS_INT32(1);
 
-  ::softPwmWrite(pin, value);
+      ::softPwmWrite(pin, value);
 
-}
+  }
 
-NAN_METHOD(softPwmStop) {
+  NAN_METHOD(softPwmStop) {
 
-  SET_ARGUMENT_NAME(0, pin);
+      SET_ARGUMENT_NAME(0, pin);
 
-  CHECK_ARGUMENTS_LENGTH_EQUAL(1);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(1);
 
-  CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(0);
 
-  int pin = GET_ARGUMENT_AS_INT32(0);
+      int pin = GET_ARGUMENT_AS_INT32(0);
 
-  ::softPwmStop(pin);
+      ::softPwmStop(pin);
 
-}
+  }
 
-NAN_MODULE_INIT(init_softPwm) {
-  NAN_EXPORT(target, softPwmCreate);
-  NAN_EXPORT(target, softPwmWrite);
-  NAN_EXPORT(target, softPwmStop);
-}
+  NAN_MODULE_INIT(init_softPwm) {
+      NAN_EXPORT(target, softPwmCreate);
+      NAN_EXPORT(target, softPwmWrite);
+      NAN_EXPORT(target, softPwmStop);
+  }
 
 } //namespace nodewpi
 

@@ -10,14 +10,14 @@
 #include "piNes.h"
 
 namespace nodewpi {
-    NAN_MODULE_INIT(init_devlib) {
-            init_ds1302(target);
-            init_gertboard(target);
-            init_lcd(target);
-            init_lcd128x64(target);
-            init_maxdetect(target);
-            init_piFace(target);
-            init_piGlow(target);
-            init_piNes(target);
-    }
+  NAN_MODULE_INIT(init_devlib) {
+      init_ds1302(target);
+      init_gertboard(target);
+      init_lcd(target);
+      init_lcd128x64(target);
+      init_maxdetect(target);
+      init_piFace(target);
+      init_piGlow(target);
+      init_piNes(target);
+  }
 }

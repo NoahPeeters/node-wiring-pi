@@ -4,9 +4,9 @@
 #include "../addon.h"
 
 namespace nodewpi {
-    NAN_METHOD(gertboardAnalogSetup);
+  NAN_METHOD(gertboardAnalogSetup);
 
-    NAN_MODULE_INIT(init_gertboard);
+  NAN_MODULE_INIT(init_gertboard);
 }
 
 #endif

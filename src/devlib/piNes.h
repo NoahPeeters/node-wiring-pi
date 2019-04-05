@@ -4,10 +4,10 @@
 #include "../addon.h"
 
 namespace nodewpi {
-    NAN_METHOD(setupNesJoystick);
-    NAN_METHOD(readNesJoystick);
+  NAN_METHOD(setupNesJoystick);
+  NAN_METHOD(readNesJoystick);
 
-    NAN_MODULE_INIT(init_piNes);
+  NAN_MODULE_INIT(init_piNes);
 }
 
 #endif

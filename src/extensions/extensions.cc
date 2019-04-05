@@ -18,22 +18,22 @@
 #include "sr595.h"
 
 namespace nodewpi {
-    NAN_MODULE_INIT(init_extensions) {
-            nodewpi::init_drcSerial(target);
-            nodewpi::init_max5322(target);
-            nodewpi::init_max31855(target);
-            nodewpi::init_mcp23s08(target);
-            nodewpi::init_mcp23s17(target);
-            nodewpi::init_mcp3002(target);
-            nodewpi::init_mcp3004(target);
-            nodewpi::init_mcp3422(target);
-            nodewpi::init_mcp4802(target);
-            nodewpi::init_mcp23008(target);
-            nodewpi::init_mcp23016(target);
-            nodewpi::init_mcp23017(target);
-            nodewpi::init_pcf8574(target);
-            nodewpi::init_pcf8591(target);
-            nodewpi::init_sn3218(target);
-            nodewpi::init_sr595(target);
-    }
+  NAN_MODULE_INIT(init_extensions) {
+      nodewpi::init_drcSerial(target);
+      nodewpi::init_max5322(target);
+      nodewpi::init_max31855(target);
+      nodewpi::init_mcp23s08(target);
+      nodewpi::init_mcp23s17(target);
+      nodewpi::init_mcp3002(target);
+      nodewpi::init_mcp3004(target);
+      nodewpi::init_mcp3422(target);
+      nodewpi::init_mcp4802(target);
+      nodewpi::init_mcp23008(target);
+      nodewpi::init_mcp23016(target);
+      nodewpi::init_mcp23017(target);
+      nodewpi::init_pcf8574(target);
+      nodewpi::init_pcf8591(target);
+      nodewpi::init_sn3218(target);
+      nodewpi::init_sr595(target);
+  }
 }

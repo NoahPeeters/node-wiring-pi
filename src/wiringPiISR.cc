@@ -22,14 +22,14 @@ static interrupt_t interrupt_data[64];
 
 
 void processNativeInterrupt(int pin) {
-    unsigned int now = ::micros();
-    uv_async_t* handle = &async_handlers[pin];
-    interrupt_t* data = &interrupt_data[pin];
-    data->pin = pin;
-    data->delta = now - data->previous_timestamp;
-    handle->data = (void*)data;
-    uv_async_send(handle);
-    data->previous_timestamp = now;
+  unsigned int now = ::micros();
+  uv_async_t* handle = &async_handlers[pin];
+  interrupt_t* data = &interrupt_data[pin];
+  data->pin = pin;
+  data->delta = now - data->previous_timestamp;
+  handle->data = (void*)data;
+  uv_async_send(handle);
+  data->previous_timestamp = now;
 }
 
 
@@ -109,77 +109,77 @@ DEFINE_NATIVE_INTERRUPT_HANDLER(63);
 // Initialise an array of interupt handlers.
 #define STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(pin) &nativeInterruptHandler##pin
 static NATIVE_INTERRUPT_HANDLER_T interrupt_handlers[64] = {
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(0),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(1),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(2),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(3),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(4),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(5),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(6),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(7),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(8),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(9),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(10),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(11),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(12),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(13),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(14),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(15),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(16),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(17),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(18),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(19),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(20),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(21),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(22),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(23),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(24),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(25),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(26),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(27),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(28),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(29),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(30),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(31),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(32),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(33),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(34),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(35),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(36),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(37),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(38),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(39),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(40),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(41),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(42),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(43),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(44),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(45),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(46),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(47),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(48),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(49),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(50),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(51),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(52),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(53),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(54),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(55),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(56),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(57),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(58),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(59),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(60),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(61),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(62),
-      STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(63)
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(0),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(1),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(2),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(3),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(4),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(5),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(6),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(7),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(8),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(9),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(10),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(11),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(12),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(13),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(14),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(15),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(16),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(17),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(18),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(19),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(20),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(21),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(22),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(23),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(24),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(25),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(26),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(27),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(28),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(29),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(30),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(31),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(32),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(33),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(34),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(35),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(36),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(37),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(38),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(39),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(40),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(41),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(42),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(43),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(44),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(45),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(46),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(47),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(48),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(49),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(50),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(51),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(52),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(53),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(54),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(55),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(56),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(57),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(58),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(59),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(60),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(61),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(62),
+    STATIC_REGISTER_NATIVE_INTERRUPT_HANDLER(63)
 };
 
 
 #if NODE_VERSION_AT_LEAST(0, 11, 0)
-  typedef v8::Persistent<v8::Function, v8::CopyablePersistentTraits<v8::Function> > CopyablePersistentFunction;
+typedef v8::Persistent<v8::Function, v8::CopyablePersistentTraits<v8::Function> > CopyablePersistentFunction;
 #else
-  typedef v8::Persistent<v8::Function> CopyablePersistentFunction;
+typedef v8::Persistent<v8::Function> CopyablePersistentFunction;
 #endif
 
 static CopyablePersistentFunction interrupt_callbacks[64];
@@ -188,7 +188,7 @@ static CopyablePersistentFunction interrupt_callbacks[64];
 
 
 #if NODE_VERSION_AT_LEAST(0, 11, 0)
-  // Node >= 11 version of dispatchInterrupt
+// Node >= 11 version of dispatchInterrupt
   static void dispatchInterrupt(uv_async_t* handle) {
     interrupt_t* data = (interrupt_t*)handle->data;
     v8::Isolate* isolate = v8::Isolate::GetCurrent();
@@ -200,15 +200,15 @@ static CopyablePersistentFunction interrupt_callbacks[64];
     callback->Call(isolate->GetCurrentContext()->Global(), 1, argv);
   }
 #else
-  // Node < 11 version of dispatchInterrupt
-  static void dispatchInterrupt(uv_async_t* handle, int status) {
-    interrupt_t* data = (interrupt_t*)handle->data;
-    v8::Local<Function> callback = v8::Local<Function>::New(interrupt_callbacks[data->pin]);
-    Local<Value> argv[] = {
+// Node < 11 version of dispatchInterrupt
+static void dispatchInterrupt(uv_async_t* handle, int status) {
+  interrupt_t* data = (interrupt_t*)handle->data;
+  v8::Local<Function> callback = v8::Local<Function>::New(interrupt_callbacks[data->pin]);
+  Local<Value> argv[] = {
       UINT32(data->delta)
-    };
-    callback->Call(Context::GetCurrent()->Global(), 1, argv);
-  }
+  };
+  callback->Call(Context::GetCurrent()->Global(), 1, argv);
+}
 #endif
 
 
@@ -217,46 +217,46 @@ namespace nodewpi {
 
   NAN_METHOD(wiringPiISR) {
 
-    SET_ARGUMENT_NAME(0, pin);
-    SET_ARGUMENT_NAME(1, edgeType);
-    SET_ARGUMENT_NAME(2, callback);
+      SET_ARGUMENT_NAME(0, pin);
+      SET_ARGUMENT_NAME(1, edgeType);
+      SET_ARGUMENT_NAME(2, callback);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(3);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(3);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
-    CHECK_ARGUMENT_TYPE_INT32(1);
-    CHECK_ARGUMENT_TYPE_FUNCTION(2);
+      CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(1);
+      CHECK_ARGUMENT_TYPE_FUNCTION(2);
 
-    int pin = GET_ARGUMENT_AS_INT32(0);
-    int edgeType = GET_ARGUMENT_AS_INT32(1);
+      int pin = GET_ARGUMENT_AS_INT32(0);
+      int edgeType = GET_ARGUMENT_AS_INT32(1);
 
-    #if NODE_VERSION_AT_LEAST(0, 11, 0)
-      // not very certain about this.
+#if NODE_VERSION_AT_LEAST(0, 11, 0)
+  // not very certain about this.
       v8::Isolate* isolate = v8::Isolate::GetCurrent();
       HandleScope scope(isolate);
       Persistent<Function> callback(isolate, GET_ARGUMENT_AS_LOCAL_FUNCTION(2));
-    #else
+#else
       Persistent<Function> callback = GET_ARGUMENT_AS_PERSISTENT_FUNCTION(2);
-    #endif
+#endif
 
 
-    // check the edge type is valid.
-    const std::vector<int> validInputs = { INT_EDGE_FALLING, INT_EDGE_RISING, INT_EDGE_BOTH, INT_EDGE_SETUP};
+      // check the edge type is valid.
+      const std::vector<int> validInputs = { INT_EDGE_FALLING, INT_EDGE_RISING, INT_EDGE_BOTH, INT_EDGE_SETUP};
 
-    if(! find_int(edgeType, validInputs)) {
-      THROW_INVALID_ARGUMENT_EXCEPTION(1, edgeType);
-    }
+      if(! find_int(edgeType, validInputs)) {
+        THROW_INVALID_ARGUMENT_EXCEPTION(1, edgeType);
+      }
 
-    interrupt_callbacks[pin] = callback;
-    interrupt_data[pin].previous_timestamp = ::micros();
+      interrupt_callbacks[pin] = callback;
+      interrupt_data[pin].previous_timestamp = ::micros();
 
 
-    uv_async_init(uv_default_loop(), &async_handlers[pin], &dispatchInterrupt);
-    uv_ref((uv_handle_t*)&async_handlers[pin]);
+      uv_async_init(uv_default_loop(), &async_handlers[pin], &dispatchInterrupt);
+      uv_ref((uv_handle_t*)&async_handlers[pin]);
 
-    // everything must be initialised when the isr is installed otherwise if
-    // a pulse arrives before structures are setup there will be a segv.
-    ::wiringPiISR(pin, edgeType, interrupt_handlers[pin]);
+      // everything must be initialised when the isr is installed otherwise if
+      // a pulse arrives before structures are setup there will be a segv.
+      ::wiringPiISR(pin, edgeType, interrupt_handlers[pin]);
 
   }
 

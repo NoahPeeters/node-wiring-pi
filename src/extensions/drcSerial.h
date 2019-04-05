@@ -4,9 +4,9 @@
 #include "../addon.h"
 
 namespace nodewpi {
-    NAN_METHOD(drcSetupSerial);
+  NAN_METHOD(drcSetupSerial);
 
-    NAN_MODULE_INIT(init_drcSerial);
+  NAN_MODULE_INIT(init_drcSerial);
 }
 
 #endif

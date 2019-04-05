@@ -9,17 +9,17 @@ namespace nodewpi {
 
   NAN_METHOD(wiringPiI2CRead) {
 
-    SET_ARGUMENT_NAME(0, fd);
+      SET_ARGUMENT_NAME(0, fd);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(1);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(1);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(0);
 
-    int fd = GET_ARGUMENT_AS_INT32(0);
+      int fd = GET_ARGUMENT_AS_INT32(0);
 
-    int res = ::wiringPiI2CRead(fd);
+      int res = ::wiringPiI2CRead(fd);
 
-    info.GetReturnValue().Set(res);
+      info.GetReturnValue().Set(res);
   }
 
   // Func : int wiringPiI2CRead (int fd, int reg);
@@ -27,20 +27,20 @@ namespace nodewpi {
 
   NAN_METHOD(wiringPiI2CReadReg8) {
 
-    SET_ARGUMENT_NAME(0, fd);
-    SET_ARGUMENT_NAME(1, reg);
+      SET_ARGUMENT_NAME(0, fd);
+      SET_ARGUMENT_NAME(1, reg);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(2);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(2);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
-    CHECK_ARGUMENT_TYPE_INT32(1);
+      CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(1);
 
-    int fd = GET_ARGUMENT_AS_INT32(0);
-    int reg = GET_ARGUMENT_AS_INT32(1);
+      int fd = GET_ARGUMENT_AS_INT32(0);
+      int reg = GET_ARGUMENT_AS_INT32(1);
 
-    int res = ::wiringPiI2CReadReg8(fd, reg);
+      int res = ::wiringPiI2CReadReg8(fd, reg);
 
-    info.GetReturnValue().Set(res);
+      info.GetReturnValue().Set(res);
   }
 
   // Func : int wiringPiI2CRead (int fd, int reg)
@@ -48,20 +48,20 @@ namespace nodewpi {
 
   NAN_METHOD(wiringPiI2CReadReg16) {
 
-    SET_ARGUMENT_NAME(0, fd);
-    SET_ARGUMENT_NAME(1, reg);
+      SET_ARGUMENT_NAME(0, fd);
+      SET_ARGUMENT_NAME(1, reg);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(2);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(2);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
-    CHECK_ARGUMENT_TYPE_INT32(1);
+      CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(1);
 
-    int fd = GET_ARGUMENT_AS_INT32(0);
-    int reg = GET_ARGUMENT_AS_INT32(1);
+      int fd = GET_ARGUMENT_AS_INT32(0);
+      int reg = GET_ARGUMENT_AS_INT32(1);
 
-    int res = ::wiringPiI2CReadReg16(fd, reg);
+      int res = ::wiringPiI2CReadReg16(fd, reg);
 
-    info.GetReturnValue().Set(res);
+      info.GetReturnValue().Set(res);
   }
 
   // Func : int wiringPiI2CWrite (int fd, int data)
@@ -69,21 +69,21 @@ namespace nodewpi {
 
   NAN_METHOD(wiringPiI2CWrite) {
 
-    SET_ARGUMENT_NAME(0, fd);
-    SET_ARGUMENT_NAME(1, data);
+      SET_ARGUMENT_NAME(0, fd);
+      SET_ARGUMENT_NAME(1, data);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(2);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(2);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
-    CHECK_ARGUMENT_TYPE_INT32(1);
+      CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(1);
 
-    int fd = GET_ARGUMENT_AS_INT32(0);
-    int data = GET_ARGUMENT_AS_INT32(1);
-    data = data & 0xFF;
+      int fd = GET_ARGUMENT_AS_INT32(0);
+      int data = GET_ARGUMENT_AS_INT32(1);
+      data = data & 0xFF;
 
-    int res = ::wiringPiI2CWrite(fd, data);
+      int res = ::wiringPiI2CWrite(fd, data);
 
-    info.GetReturnValue().Set(res);
+      info.GetReturnValue().Set(res);
   }
 
   // Func : int wiringPiI2CWriteReg8 (int fd, int reg, int data)
@@ -91,47 +91,47 @@ namespace nodewpi {
 
   NAN_METHOD(wiringPiI2CWriteReg8) {
 
-    SET_ARGUMENT_NAME(0, fd);
-    SET_ARGUMENT_NAME(1, reg);
-    SET_ARGUMENT_NAME(2, data);
+      SET_ARGUMENT_NAME(0, fd);
+      SET_ARGUMENT_NAME(1, reg);
+      SET_ARGUMENT_NAME(2, data);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(3);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(3);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
-    CHECK_ARGUMENT_TYPE_INT32(1);
-    CHECK_ARGUMENT_TYPE_INT32(2);
+      CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(1);
+      CHECK_ARGUMENT_TYPE_INT32(2);
 
-    int fd = GET_ARGUMENT_AS_INT32(0);
-    int reg = GET_ARGUMENT_AS_INT32(1);
-    int data = GET_ARGUMENT_AS_INT32(2);
-    data = data & 0xFF;
+      int fd = GET_ARGUMENT_AS_INT32(0);
+      int reg = GET_ARGUMENT_AS_INT32(1);
+      int data = GET_ARGUMENT_AS_INT32(2);
+      data = data & 0xFF;
 
-    int res = ::wiringPiI2CWriteReg8(fd, reg, data);
+      int res = ::wiringPiI2CWriteReg8(fd, reg, data);
 
-    info.GetReturnValue().Set(res);
+      info.GetReturnValue().Set(res);
   }
 
   NAN_METHOD(wiringPiI2CWriteReg16) {
 
 
-    SET_ARGUMENT_NAME(0, fd);
-    SET_ARGUMENT_NAME(1, reg);
-    SET_ARGUMENT_NAME(2, data);
+      SET_ARGUMENT_NAME(0, fd);
+      SET_ARGUMENT_NAME(1, reg);
+      SET_ARGUMENT_NAME(2, data);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(3);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(3);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
-    CHECK_ARGUMENT_TYPE_INT32(1);
-    CHECK_ARGUMENT_TYPE_INT32(2);
+      CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(1);
+      CHECK_ARGUMENT_TYPE_INT32(2);
 
-    int fd = GET_ARGUMENT_AS_INT32(0);
-    int reg = GET_ARGUMENT_AS_INT32(1);
-    int data = GET_ARGUMENT_AS_INT32(2);
-    data = data & 0xFFFF;
+      int fd = GET_ARGUMENT_AS_INT32(0);
+      int reg = GET_ARGUMENT_AS_INT32(1);
+      int data = GET_ARGUMENT_AS_INT32(2);
+      data = data & 0xFFFF;
 
-    int res = ::wiringPiI2CWriteReg16(fd, reg, data);
+      int res = ::wiringPiI2CWriteReg16(fd, reg, data);
 
-    info.GetReturnValue().Set(res);
+      info.GetReturnValue().Set(res);
   }
 
   // Func : int wiringPiI2CSetupInterface (const char *device, int devId)
@@ -139,21 +139,21 @@ namespace nodewpi {
   NAN_METHOD(wiringPiI2CSetupInterface) {
 
 
-    SET_ARGUMENT_NAME(0, device);
-    SET_ARGUMENT_NAME(1, devId);
+      SET_ARGUMENT_NAME(0, device);
+      SET_ARGUMENT_NAME(1, devId);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(2);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(2);
 
-    CHECK_ARGUMENT_TYPE_STRING(0);
-    CHECK_ARGUMENT_TYPE_INT32(1);
+      CHECK_ARGUMENT_TYPE_STRING(0);
+      CHECK_ARGUMENT_TYPE_INT32(1);
 
-    Nan::Utf8String device(GET_ARGUMENT_AS_STRING(0));
+      Nan::Utf8String device(GET_ARGUMENT_AS_STRING(0));
 
-    int devId = GET_ARGUMENT_AS_INT32(1);
+      int devId = GET_ARGUMENT_AS_INT32(1);
 
-    int res = ::wiringPiI2CSetupInterface(*device, devId);
+      int res = ::wiringPiI2CSetupInterface(*device, devId);
 
-    info.GetReturnValue().Set(res);
+      info.GetReturnValue().Set(res);
   }
 
   // Func : int wirintPiI2CSetup (int devId)
@@ -161,17 +161,17 @@ namespace nodewpi {
   NAN_METHOD(wiringPiI2CSetup) {
 
 
-    SET_ARGUMENT_NAME(0, devId);
+      SET_ARGUMENT_NAME(0, devId);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(1);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(1);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(0);
 
-    int devId = GET_ARGUMENT_AS_INT32(0);
+      int devId = GET_ARGUMENT_AS_INT32(0);
 
-    int res = ::wiringPiI2CSetup(devId);
+      int res = ::wiringPiI2CSetup(devId);
 
-    info.GetReturnValue().Set(res);
+      info.GetReturnValue().Set(res);
   }
 
   // Func : void wiringPiI2CClose(const int fd)
@@ -180,29 +180,29 @@ namespace nodewpi {
 
   NAN_METHOD(wiringPiI2CClose) {
 
-    SET_ARGUMENT_NAME(0, fd);
+      SET_ARGUMENT_NAME(0, fd);
 
-    CHECK_ARGUMENTS_LENGTH_EQUAL(1);
+      CHECK_ARGUMENTS_LENGTH_EQUAL(1);
 
-    CHECK_ARGUMENT_TYPE_INT32(0);
+      CHECK_ARGUMENT_TYPE_INT32(0);
 
-    int fd = GET_ARGUMENT_AS_INT32(0);
+      int fd = GET_ARGUMENT_AS_INT32(0);
 
-    ::close(fd);
+      ::close(fd);
 
 
   }
 
   NAN_MODULE_INIT(init_wiringPiI2C) {
-    NAN_EXPORT(target, wiringPiI2CRead);
-    NAN_EXPORT(target, wiringPiI2CReadReg8);
-    NAN_EXPORT(target, wiringPiI2CReadReg16);
-    NAN_EXPORT(target, wiringPiI2CWrite);
-    NAN_EXPORT(target, wiringPiI2CWriteReg8);
-    NAN_EXPORT(target, wiringPiI2CWriteReg16);
-    NAN_EXPORT(target, wiringPiI2CSetupInterface);
-    NAN_EXPORT(target, wiringPiI2CSetup);
-    NAN_EXPORT(target, wiringPiI2CClose);
+      NAN_EXPORT(target, wiringPiI2CRead);
+      NAN_EXPORT(target, wiringPiI2CReadReg8);
+      NAN_EXPORT(target, wiringPiI2CReadReg16);
+      NAN_EXPORT(target, wiringPiI2CWrite);
+      NAN_EXPORT(target, wiringPiI2CWriteReg8);
+      NAN_EXPORT(target, wiringPiI2CWriteReg16);
+      NAN_EXPORT(target, wiringPiI2CSetupInterface);
+      NAN_EXPORT(target, wiringPiI2CSetup);
+      NAN_EXPORT(target, wiringPiI2CClose);
   }
 
 } //namespace nodewpi

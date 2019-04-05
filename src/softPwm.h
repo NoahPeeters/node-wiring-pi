@@ -4,7 +4,6 @@
 #include "addon.h"
 
 namespace nodewpi {
-
   NAN_METHOD(softPwmCreate);
   NAN_METHOD(softPwmWrite);
   NAN_METHOD(softPwmStop);
